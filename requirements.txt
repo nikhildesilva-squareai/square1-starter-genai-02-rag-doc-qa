@@ -1,0 +1,5 @@
+anthropic>=0.40
+pytest>=8.0
+# Stretch goals (uncomment what you use):
+# chromadb>=0.5
+# psycopg[binary]>=3.1   # for pgvector

@@ -1,0 +1,120 @@
+{
+  "_meta": {
+    "source": "Sample material — Square 1-owned (synthetic)",
+    "license": "Proprietary — Square 1-owned, free for learners",
+    "description": "A 10-item evaluation set for a RAG document-Q&A pipeline over the Nimbus Notes corpus in docs/. Each item pairs a question with the single source doc a correct retriever should rank first (expected_source_doc) and a few substrings a faithful, grounded answer should contain (expected_answer_contains). Use it to measure retrieval accuracy (did the right doc get retrieved?) and answer groundedness (is the answer supported and cited?)."
+  },
+  "corpus": [
+    "01-getting-started.md",
+    "02-pricing-and-plans.md",
+    "03-sync-and-offline.md",
+    "04-sharing-and-permissions.md",
+    "05-search-and-tags.md",
+    "06-import-export.md",
+    "07-security-and-privacy.md",
+    "08-api-and-integrations.md"
+  ],
+  "evals": [
+    {
+      "id": "q01",
+      "question": "How much does the Pro plan cost per user per month?",
+      "expected_source_doc": "02-pricing-and-plans.md",
+      "expected_answer_contains": [
+        "$8",
+        "Pro"
+      ],
+      "note": "Pro is $8 per user per month (or $80/user/year). Answer must cite the pricing doc."
+    },
+    {
+      "id": "q02",
+      "question": "What should I do if sync stalls and offline edits won't push?",
+      "expected_source_doc": "03-sync-and-offline.md",
+      "expected_answer_contains": [
+        "sign out",
+        "Sync now"
+      ],
+      "note": "Sign out and back in, then Settings -> Sync -> Sync now; offline edits are queued. Cite the sync doc."
+    },
+    {
+      "id": "q03",
+      "question": "Which permission role can edit and re-share a note?",
+      "expected_source_doc": "04-sharing-and-permissions.md",
+      "expected_answer_contains": [
+        "Editor"
+      ],
+      "note": "Editor can read, edit and re-share. Cite the sharing doc."
+    },
+    {
+      "id": "q04",
+      "question": "What file formats can I export a note to?",
+      "expected_source_doc": "06-import-export.md",
+      "expected_answer_contains": [
+        "PDF",
+        "Markdown",
+        "HTML"
+      ],
+      "note": "PDF, Markdown, HTML. Cite the import/export doc, not the import side."
+    },
+    {
+      "id": "q05",
+      "question": "How do I turn on two-factor authentication?",
+      "expected_source_doc": "07-security-and-privacy.md",
+      "expected_answer_contains": [
+        "Settings",
+        "Security",
+        "2FA"
+      ],
+      "note": "Settings -> Security; authenticator app. Cite the security doc."
+    },
+    {
+      "id": "q06",
+      "question": "What is the API rate limit?",
+      "expected_source_doc": "08-api-and-integrations.md",
+      "expected_answer_contains": [
+        "120",
+        "minute"
+      ],
+      "note": "120 requests per minute per token. Cite the API doc."
+    },
+    {
+      "id": "q07",
+      "question": "How much attachment storage does the Pro plan include?",
+      "expected_source_doc": "02-pricing-and-plans.md",
+      "expected_answer_contains": [
+        "10 GB",
+        "Pro"
+      ],
+      "note": "Pro includes 10 GB of attachments. Only the pricing doc states storage limits."
+    },
+    {
+      "id": "q08",
+      "question": "What keyboard shortcut opens search?",
+      "expected_source_doc": "05-search-and-tags.md",
+      "expected_answer_contains": [
+        "Ctrl+K",
+        "Cmd+K"
+      ],
+      "note": "Ctrl+K (Cmd+K on Mac). Cite the search/tags doc."
+    },
+    {
+      "id": "q09",
+      "question": "Can I import my notes from Evernote?",
+      "expected_source_doc": "06-import-export.md",
+      "expected_answer_contains": [
+        "Evernote",
+        ".enex"
+      ],
+      "note": "Yes — import Evernote .enex via Settings -> Import. Cite the import/export doc."
+    },
+    {
+      "id": "q10",
+      "question": "How do I create my first notebook?",
+      "expected_source_doc": "01-getting-started.md",
+      "expected_answer_contains": [
+        "New Notebook",
+        "sidebar"
+      ],
+      "note": "Click New Notebook in the sidebar, name it, press Enter. Cite getting-started."
+    }
+  ]
+}
